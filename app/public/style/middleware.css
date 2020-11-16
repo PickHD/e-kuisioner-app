@@ -1,0 +1,161 @@
+/* 404 CODE SECTION */
+#not-found-section{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  color: #66AAFC;
+}
+#not-found-section img{
+  width: 500px;
+  height: 500px;
+}
+#not-found-section h1{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  width: 25%;
+  text-align: center;
+  margin-top: 20px;
+}
+#not-found-section h3{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  width: 50%;
+  text-align: center;
+}
+/* END 404 SECTION */
+
+/* 500 SECTION */
+#server-error-section{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  color: #66AAFC;
+}
+#server-error-section img{
+  width: 500px;
+  height: 500px;
+}
+#server-error-section h1{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  width: 25%;
+  text-align: center;
+  margin-top: 20px;
+}
+#server-error-section h3{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  width: 50%;
+  text-align: center;
+}
+/* END 500 SECTION */
+
+/* EMAIL FAIL SECTION */
+#email-fail-section{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px auto;
+  color: #66AAFC;
+}
+#email-fail-section img{
+  width: 400px;
+  margin: 20px auto;
+}
+#email-fail-section h1{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  width: 25%;
+  text-align: center;
+}
+#email-fail-section h3{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  width: 50%;
+  text-align: center;
+}
+#email-fail-section h3 a{
+ font-family: 'Quicksand', sans-serif;
+ font-weight: 700;
+ font-size: 23px;
+ color: #0F68BA;
+ text-decoration: underline;
+}
+/* END EMAIL FAIL SECTION */
+
+/* SUSPENDED USER SECTION */
+#suspended-user-section{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  color: #66AAFC;
+}
+#suspended-user-section img{
+  width: 500px;
+  height: 500px;
+}
+#suspended-user-section h1{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  width: 25%;
+  text-align: center;
+  margin-top: 20px;
+}
+#suspended-user-section h3{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  width: 50%;
+  text-align: center;
+}
+/* END SUSPENDED USER SECTION */

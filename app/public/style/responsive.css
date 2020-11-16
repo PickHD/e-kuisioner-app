@@ -1,0 +1,287 @@
+@media (max-width: 600px){
+
+  #index-section .right-side h1{
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    font-size: 28px;
+  }
+  #index-section .right-side-logo img{
+    width: 100%;
+  }
+  #index-section .right-side button{
+    margin-left: 20px;
+  }
+
+  #login-section .right-side{
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+       -ms-flex-direction: column;
+           flex-direction: column;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   margin: 0px auto;
+  }
+  #login-section .right-side h1{
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    font-size: 28px;
+  }
+  #login-section .right-side form button {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin: 20px auto;
+  }
+    #login-section .right-side form button a{
+    color: white;
+  }
+
+
+  #register-section {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 100%;
+    margin: 20px auto;
+  }
+  #register-section .register-form{
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 100%;
+  }
+  #register-section h1{
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 75%;
+    font-size: 26px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  #not-found-section h1{
+    font-size: 24px;
+    width: 50%;
+  }
+  #not-found-section img{
+    width: 100%;
+  }
+  #not-found-section h3{
+    font-size: 20px;
+    width: 100%;
+  }
+
+
+  #server-error-section h1{
+    font-size: 24px;
+    width: 50%;
+  }
+  #server-error-section img{
+    width: 100%;
+  }
+  #server-error-section h3{
+    font-size: 20px;
+    width: 100%;
+  }
+  
+  #suspended-user-section h1{
+    font-size: 24px;
+    width: 50%;
+  }
+  #suspended-user-section img{
+    width: 100%;
+  }
+  #suspended-user-section h3{
+    font-size: 20px;
+    width: 100%;
+  }
+
+  #email-fail-section{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #email-fail-section img{
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 100%;
+    margin: 80px auto;
+  }
+  #email-fail-section h1{
+    width: 100%;
+    font-size: 24px;
+  }
+  #email-fail-section h3{
+    width: 100%;
+    font-size: 18px;
+  }
+  #email-fail-section h3 a{
+    font-size: 18px;
+  }
+
+
+  #waiting-email-section{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #waiting-email-section img{
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 100%;
+    margin: 80px auto;
+  }
+  #waiting-email-section h1{
+    width: 100%;
+    font-size: 24px;
+  }
+  #waiting-email-section h3{
+    width: 100%;
+    font-size: 18px;
+  }
+
+
+  #success-verify-section{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #success-verify-section img{
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 100%;
+    margin: 80px auto;
+  }
+  #success-verify-section h1{
+    width: 100%;
+    font-size: 24px;
+  }
+  #success-verify-section h3{
+    width: 100%;
+    font-size: 18px;
+  }
+  #success-verify-section h3 a{
+    font-size: 18px;
+  }
+
+
+  #reset-pass-section {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 100%;
+  }
+  #reset-pass-section h1{
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 50%;
+    margin-top: 80px;
+    font-size: 20px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #reset-pass-section .security-concept img{
+    width: 100%;
+  }
+  #reset-pass-section .reset-form{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 15px;
+    width: 100%;
+  }
+  #req-token-section {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 100%;
+  }
+  #req-token-section h1{
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 75%;
+    margin-top: 80px;
+    font-size: 24px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #req-token-section .wishes-concept img{
+    width: 100%;
+  }
+  #req-token-section .req-form{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 15px;
+    width: 100%;
+  }
+
+}

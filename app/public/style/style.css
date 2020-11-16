@@ -1,0 +1,744 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('./loader.css');
+@import url('./middleware.css');
+@import url('./admin/dashboard.css');
+@import url('./admin/manage_user.css');
+@import url('./admin/manage_quisioner.css');
+@import url('./user/dashboard.css');
+@import url('./user/quisioner.css');
+
+
+html,body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* INDEX SECTION */
+#index-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 30px auto;
+  height: 600px;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
+          box-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
+}
+#index-section .left-side{
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  background-color: whitesmoke;
+  padding-top: 100px;
+}
+#index-section .left-side-logo img{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 180px;
+  height: 187px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+#index-section .left-side h3{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  margin: 0px auto;
+  text-align: center;
+  color: #0F68BA;
+}
+#index-section .right-side{
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  background-color: #66AAFC;
+  padding-top: 50px;
+}
+#index-section .right-side h1{
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 38px;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+#index-section .right-side-logo img{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 400px;
+  height: 400px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: -50px auto;
+}
+#index-section .right-side button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 50px;
+  margin-left: 140px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+}
+#index-section .right-side button a {
+  text-decoration: none;
+  color: white;
+}
+/* END INDEX SECTION */
+
+/* REGISTER SECTION */
+#register-section{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#register-section h1{
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  margin: 30px auto;
+  text-align: center;
+  color: #66AAFC;
+}
+#register-section .register-form{
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 800px;
+  height: 700px;
+  border-radius: 10px;
+  background-color: #66AAFC;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+}
+#register-section .register-form form input,#register-section .register-form form textarea,#register-section .register-form form select{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #0F68BA;
+}
+#register-section .register-form input::placeholder{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #66AAFC;
+}
+#register-section .register-form form .form-row div{
+  margin-bottom: 10px;
+}
+#register-section .register-form form button{
+  float: right;
+  margin: 20px;
+}
+#register-section .register-form form button a{
+  text-decoration: none;
+  color: white;
+}
+#register-section .btn-show-hide-pwd {
+  color: white;
+  cursor: pointer;
+  float: left;
+  opacity: 0.5;
+}
+#register-section .btn-show-hide-pwd:hover {
+  opacity: 1;
+}
+#register-section .btn-show-hide-pwd:active {
+  -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+          transform: scale(0.9);
+}
+/* END REGISTER SECTION */
+
+/* VERIFY ACCOUNT SECTION */
+#waiting-email-section{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px auto;
+  color: #66AAFC;
+}
+#waiting-email-section img{
+  width: 800px;
+  margin: 20px auto;
+}
+#waiting-email-section h1{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  width: 25%;
+  text-align: center;
+}
+#waiting-email-section h3{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  width: 50%;
+  text-align: center;
+}
+#waiting-email-section h3 a{
+  color: #66AAFC;
+  text-decoration: underline;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+#waiting-email-section h3 a:hover{
+  color: #0F68BA;
+}
+/* END VERIFY ACCOUNT SECTION */
+
+/* SUCCESS VERIFY SECTION */
+#success-verify-section{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px auto;
+  color: #66AAFC;
+}
+#success-verify-section img{
+  width: 600px;
+  margin: 20px auto;
+}
+#success-verify-section h1{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  width: 25%;
+  text-align: center;
+}
+#success-verify-section h3{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  width: 50%;
+  text-align: center;
+}
+#success-verify-section h3 a{
+ font-family: 'Quicksand', sans-serif;
+ font-weight: 700;
+ font-size: 23px;
+ color: #0F68BA;
+ text-decoration: underline;
+}
+/* END SUCCESS VERIFY SECTION */
+
+/* LOGIN SECTION */
+#login-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 30px auto;
+  max-width: 1000px;
+  height: 600px;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
+          box-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
+}
+#login-section .left-side{
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  background-color: whitesmoke;
+  padding-top: 100px;
+}
+#login-section .left-side-logo img{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 180px;
+  height: 187px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+#login-section .left-side h3{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+ font-family: 'Quicksand', sans-serif;
+ font-weight: 400;
+  font-size: 24px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  margin: 0px auto;
+  text-align: center;
+  color: #0F68BA;
+}
+#login-section .right-side{
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  background-color: #66AAFC;
+  padding-top: 50px;
+}
+#login-section .right-side h1{
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 38px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+#login-section .right-side form label{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+  text-align: left;
+}
+#login-section .right-side form .form-group input{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  color: #66AAFC;
+  font-size: 16px;
+}
+#login-section .right-side form button{
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 90px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight:700;
+  font-size: 18px;
+}
+#login-section .right-side form button a{
+  text-decoration: none;
+  color: white;
+}
+#login-section .right-side form .form-check label{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: white;
+  text-align: left;
+}
+#login-section .right-side form .form-option p a{
+  text-decoration: underline;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+#login-section .right-side form .form-option p a:hover{
+  color: #0F68BA;
+}
+/* END LOGIN SECTION */
+
+/* FORGOT PASS SECTION */
+#forgot-pass-section{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20 auto;
+  color: #66AAFC;
+}
+#forgot-pass-section .sitting-people img{
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+#forgot-pass-section h1{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+#forgot-pass-section form input{
+  border: 3px solid #66AAFC;
+  border-radius: 10px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  color: #66AAFC;
+}
+#forgot-pass-section form input::-webkit-input-placeholder{
+  color: #66AAFC;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+}
+#forgot-pass-section form input::-moz-placeholder{
+  color: #66AAFC;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+}
+#forgot-pass-section form input:-ms-input-placeholder{
+  color: #66AAFC;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+}
+#forgot-pass-section form input::placeholder{
+  color: #66AAFC;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+}
+#forgot-pass-section form button{
+  float: right;
+  width: 70px;
+  height: 45px;
+}
+/* END FORGOT PASS SECTION */
+
+/* RESET PASS SECTION */
+#reset-pass-section{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #66AAFC;
+}
+#reset-pass-section h1{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  width: 100%;
+  text-align: center;
+}
+#reset-pass-section .security-concept img{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 550px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+#reset-pass-section .reset-form{
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  width: 500px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: #66AAFC;
+}
+#reset-pass-section .reset-form form label,
+#reset-pass-section .reset-form form button{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+}
+#reset-pass-section .reset-form form button{
+  float: right;
+}
+#reset-pass-section .reset-form form input::-webkit-input-placeholder{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #66AAFC;
+}
+#reset-pass-section .reset-form form input::-moz-placeholder{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #66AAFC;
+}
+#reset-pass-section .reset-form form input:-ms-input-placeholder{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #66AAFC;
+}
+#reset-pass-section .reset-form form input::placeholder{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #66AAFC;
+}
+#reset-pass-section .reset-form form input{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #66AAFC;
+}
+#reset-pass-section .btn-show-hide-pwd {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: white;
+  cursor: pointer;
+  opacity: 0.5;
+}
+#reset-pass-section .btn-show-hide-pwd:hover {
+  opacity: 1;
+}
+#reset-pass-section .btn-show-hide-pwd:active {
+  -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+          transform: scale(0.9);
+}
+/* END RESET PASS SECTION */
+
+/* REQ TOKEN SECTION */
+#req-token-section{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#req-token-section h1{
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  width: 100%;
+  text-align: center;
+  color: #66AAFC;
+  margin-top: 20px auto;
+}
+#req-token-section .wishes-concept img{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 300px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+#req-token-section .req-form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  padding-top: 15px;
+  width: 500px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: #66AAFC;
+}
+#req-token-section .req-form form label,
+#req-token-section .req-form form button{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+}
+#req-token-section .req-form form input::-webkit-input-placeholder{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #66AAFC;
+}
+#req-token-section .req-form form input::-moz-placeholder{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #66AAFC;
+}
+#req-token-section .req-form form input:-ms-input-placeholder{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #66AAFC;
+}
+#req-token-section .req-form form input::placeholder,#req-token-section .req-form form input,
+#req-token-section .req-form form select option{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #66AAFC;
+}
+#req-token-section .req-form form button{
+  float: right;
+  margin-top: 20px;
+}
+/* END TOKEN SECTION */
+/* FOOTER SECTION */
+footer{
+  position: fixed;
+  top: 100;
+  right: 0;
+  bottom: 0;
+  left: 100;
+}
+footer .footer-section img{
+  width: 100px;
+}
