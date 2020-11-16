@@ -1,0 +1,71 @@
+<div class="row" id="user-dashboard">
+
+  <div class="user-left">
+    <div class="user-info">
+      <img src="/static/img/user_circle.svg" alt="user-circle">
+      <h1><%=firstName%> <%=lastName%></h1>
+      <h3><%=role%></h3>
+    </div>
+    <div class="user-menu">
+      <ul>
+        <li><a href="#">Menu Utama</a><i class="fas fa-arrow-right"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="user-right">
+    <div class="user-options">
+      <div class="btn-group dropleft">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <span><i class="fas fa-users-cog"></i></span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/users/profile/<%=firstName.trim()%>/<%=userId%>">Profil</a>
+          <a class="dropdown-item" href="/auth/logout">Keluar</a>
+        </div>
+      </div>
+    </div>
+    <div class="right-content">
+      <h1>Menu Utama</h1>
+      <div class="card status">
+        <div class="card-body">
+          <h5 class="card-title"><%=getCountQuiHeader%></h5>
+          <p class="card-text">Total Kuisioner Yang Tersedia</p>
+          <div class="img-pencil">
+            <img src="/static/img/pencil.svg" alt="pencil alt">
+          </div>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 quisioner-card">
+        <% for( let i = 0; i < getListQuiHeader.length; i++ ) { %>
+        <div class="col mb-4">
+          <div class="card">
+            <div class="card-header">
+              <%=getListQuiHeader[i].quisioner_title%>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> Info Kuisioner : </h5>
+              <p class="card-text"><%=getListQuiHeader[i].quisioner_info%></p>
+              <a class="btn btn-primary" href="/users/quisioner/<%=getListQuiHeader[i].quisioner_title%>"
+                id="quisionerBtn">
+                IKUTI</a>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<% if (warningAlert) { %>
+<script>
+  Swal.fire({
+    icon: 'warning',
+    title: 'Pemberitahuan',
+    text: '<%=msg%>',
+  })
+</script>
+<%};%>
