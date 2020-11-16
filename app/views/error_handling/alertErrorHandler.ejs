@@ -1,0 +1,11 @@
+<% if (errorAlert) { %>
+<% msg.forEach(m => { %>
+<script>
+  Swal.fire({
+    title: 'Oops',
+    showConfirmButton: false,
+    text: '<%=m%>',
+    icon: 'error',
+  });
+</script>
+<% }) %> <% }; %>
