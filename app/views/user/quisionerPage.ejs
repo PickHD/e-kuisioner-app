@@ -1,0 +1,56 @@
+<div class="row" id="user-quisioner">
+
+  <div class="user-left">
+    <div class="user-info">
+      <img src="/static/img/user_circle.svg" alt="user-circle">
+      <h1><%=firstName%> <%=lastName%></h1>
+      <h3><%=role%></h3>
+    </div>
+    <div class="user-menu">
+      <ul>
+        <li><a href="/users/dashboard" id="getMenuBtn">Menu Utama</a><i class="fas fa-arrow-left"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="user-right">
+    <div class="user-options">
+      <div class="btn-group dropleft">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <span><i class="fas fa-users-cog"></i></span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/users/profile/<%=firstName.trim()%>/<%=userId%>">Profil</a>
+          <a class="dropdown-item" href="/auth/logout">Keluar</a>
+        </div>
+      </div>
+    </div>
+    <div class="right-content">
+      <h1>Jawab Dengan Jujur.</h1>
+      <form action="/users/quisioner/<%=getQuisionerSlugged%>/finish" method="POST">
+        <input type="hidden" name="getQuisionerTitle" value="<%=getQuisionerTitle%>">
+        <% for( let j = 0; j < listQuestions.length; j++ ) { %>
+        <div class="form-group">
+          <label for="question"><%=noInc++%>. <%=listQuestions[j].getDataValue("question_name")%></label>
+          <% if (isRadioType) { %>
+          <% for( let k = 0; k < listOptions.length; k++ ) { %>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="getCheck" name="options_<%=j%>" value="<%=listOptions[k]%>"
+              required="required">
+            <label class="form-check-label">
+              <%=listOptions[k]%> </label>
+          </div>
+          <% } %>
+          <% } %>
+        </div>
+        <% } %>
+        <input type="hidden" name="optionGroupId"
+          value="<%=listQuestions[0].getDataValue("Option_group").getDataValue("id")%>">
+        <input type="hidden" name="getResult" id="result" value="">
+        <button type="submit" class="btn btn-primary" id="getSubmitQui">Selesai</button>
+      </form>
+    </div>
+
+  </div>
+
+</div>
