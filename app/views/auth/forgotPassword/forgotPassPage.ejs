@@ -1,0 +1,13 @@
+<div class="row" id="forgot-pass-section">
+  <h1><%=msgHeader%></h1>
+  <div class="sitting-people">
+    <img src="/static/img/find_email.svg" alt="">
+  </div>
+  <form action="/auth/forgot-password" method="POST">
+    <div class="form-group">
+      <input type="email" inputmode="email" autocomplete="email" class="form-control form-control-sm" name="searchEmail"
+        placeholder="Masukkan Email Anda" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Cari</button>
+  </form>
+</div>
