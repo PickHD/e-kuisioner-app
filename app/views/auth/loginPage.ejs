@@ -1,0 +1,68 @@
+<div class="row" id="login-section">
+  <aside class="col-lg left-side">
+    <div class="left-side-logo">
+      <img src="/static/img/logo_bpn.png" alt="bpn logo">
+      <img src="/static/img/brand_logo.png" alt="brand logo">
+    </div>
+    <h3>Kantor Wilayah Badan Pertanahan Nasional Jawa Barat</h3>
+  </aside>
+  <aside class="col-lg right-side">
+    <h1>Selamat Datang Kembali! </h1>
+    <form action="/auth/login" method="POST">
+      <input type="hidden" id="gRecaptchaToken" name="gRecaptchaToken">
+      <input type="hidden" name="action" value="validate_captcha">
+      <div class="form-group">
+        <label for="email">Alamat Email</label>
+        <input type="email" class="form-control form-control-sm" name="email" autocomplete="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Kata sandi</label>
+        <input type="password" class="form-control form-control-sm" name="password" autocomplete="current-password"
+          required>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input">
+        <label class="form-check-label" for="check">Ingat Saya</label>
+      </div>
+      <div class="form-group form-option">
+        <p><a href="/auth/forgot-password">Lupa Kata Sandi?</a> </p>
+        <p><a href="/auth/register">Belum Punya Akun?</a></p>
+      </div>
+      <button type="button" class="btn btn-secondary"><a href="/">Kembali</a></button>
+      <button type="submit" class="btn btn-primary">Masuk</button>
+    </form>
+  </aside>
+</div>
+
+<% if (successAlert) { %>
+<script>
+  Swal.fire({
+    icon: 'success',
+    title: 'Yeay!',
+    text: '<%=msg%>',
+  })
+</script>
+<% }; %>
+
+<% if (warningAlert) { %>
+<script>
+  Swal.fire({
+    icon: 'warning',
+    title: 'Pemberitahuan',
+    text: '<%=msg%>',
+  })
+</script>
+<% }; %>
+
+<script src="https://www.google.com/recaptcha/api.js?render=6LcuTNoZAAAAAHgLxsP5BxQMJXSocrX2YQzVj8BI"></script>
+<script>
+  grecaptcha.ready(function () {
+    // do request for recaptcha token
+    // response is promise with passed token
+    grecaptcha.execute('6LcuTNoZAAAAAHgLxsP5BxQMJXSocrX2YQzVj8BI', { action: 'validate_captcha' })
+      .then(function (token) {
+        // add token value to form
+        document.getElementById('gRecaptchaToken').value = token;
+      });
+  });
+</script>
