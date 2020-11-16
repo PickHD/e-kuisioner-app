@@ -1,0 +1,115 @@
+<div class="row" id="manage-user">
+
+  <div class="user-left">
+    <div class="user-info">
+      <img src="/static/img/user_circle.svg" alt="user-circle">
+      <h1><%=firstName%> <%=lastName%></h1>
+      <h3><%=role%></h3>
+    </div>
+    <div class="user-menu">
+      <ul>
+        <li><a href="/admin/dashboard" class="dashboard-link">Menu Utama</a><i class="fas fa-arrow-left"></i></li>
+        <li>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Kelola
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/admin/manage/users">User</a>
+              <a class="dropdown-item" href="/admin/manage/quisioners">Kuisioner</a>
+            </div>
+          </div><i class="fas fa-arrow-down"></i>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+  <div class="user-right">
+    <div class="user-options">
+      <div class="btn-group dropleft">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <span><i class="fas fa-users-cog"></i></span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/auth/logout">Keluar</a>
+        </div>
+      </div>
+    </div>
+    <div class="right-content">
+      <h1>Kelola User</h1>
+      <div class="container">
+        <table class="table table-hover " id="datatables">
+          <thead class="thead-blue">
+            <tr>
+              <th>#</th>
+              <th>Nama Lengkap</th>
+              <th>Email</th>
+              <th>Status</th>
+              <th colspan="2">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for( let j = 0; j < getList.length; j++ ) { %>
+            <tr>
+              <td><%=noInc++%></td>
+              <td><%=getList[j].getDataValue("full_name")%></td>
+              <td><%=getList[j].getDataValue("email")%></td>
+              <% if (getList[j].getDataValue("isActive")=== true) { %>
+              <td>Aktif</td>
+              <% }else{ %>
+              <td>Tidak Aktif</td>
+              <%}%>
+              <td><a href="/admin/manage/user/<%=getList[j].getDataValue("id")%>"><img src="/static/img/edit.svg"
+                alt="view icon"></a></td>
+              <td><a href="/admin/manage/user/delete/<%=getList[j].getDataValue("id")%>" id="btnDelete"><img
+                    src="/static/img/trash.svg" alt="delete icon"></a></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+        <% if (pages > 0) { %>
+        <nav aria-label="...">
+          <ul class="pagination">
+            <% if (current == 1) { %>
+            <li class="page-item disabled">
+              <a class="page-link"><span aria-hidden="true">&laquo;</span></a>
+            </li>
+            <% } else { %>
+            <li class="page-item">
+              <a href="/admin/manage/users/page-1" class="page-link"> <span aria-hidden="true">&laquo;</span></a>
+            </li>
+            <% } %> <% let i = (Number(current) > 20 ? Number(current) - 19 : 1) %>
+            <% if (i !== 1) { %>
+            <li class="page-item disabled"><a>...</a></li>
+            <% } %> <% for (i; i <= (Number(current) + 19) && i <= pages; i++){ %>
+            <% if (i == current) { %>
+            <li class="page-item active">
+              <a class="page-link"><span><%= i %></span></a>
+            </li>
+            <% } else { %>
+            <li class="page-item">
+              <a class="page-link" href="/admin/manage/users/page-<%=i%>"><%= i %></a>
+            </li>
+            <% } %>
+            <% if (i == Number(current) + 19 && i < pages) { %>
+            <li class="page-item disabled"><a>...</a></li>
+            <% } %> <% } %>
+            <% if (current == pages) { %>
+            <li class="page-item disabled">
+              <a class="page-link"> <span aria-hidden="true">&raquo;</span></a>
+            </li>
+            <% } else { %>
+            <li class="page-item">
+              <a class="page-link" href="/admin/manage/users/page-<%=pages%>"><span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+            <% } %>
+          </ul>
+        </nav>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+<%- include("../../partials/headManageUserPage") %>
+<div class="container form-edit">
+  <h1>Detail User</h1>
+  <form action="/admin/manage/user/<%=getUser.id%>" method="POST">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="first_name">Nama Pertama</label>
+        <input type="name" placeholder="Masukan Nama Pertama" class="form-control form-control-sm" minlength="5"
+          name="first_name" value="<%=getUser.first_name%>" required />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="last_name">Nama Akhir</label>
+        <input type="name" placeholder="Masukan Nama Akhir" class="form-control form-control-sm" minlength="5"
+          name="last_name" value="<%=getUser.last_name%>" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="email">Alamat Email</label>
+        <input type="email" inputmode="email" placeholder="Masukan Email" autocomplete="email"
+          class="form-control form-control-sm " name="email" value="<%=getUser.email%>" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="no_telp">No Telp</label>
+        <input type="tel" class="form-control form-control-sm" name="phone" placeholder="08xxxxxxxxxx" minlength="12"
+          pattern="^\d{12}$" value="<%=getUser.phone%>" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="religion">Agama</label>
+        <select name="religion" class="form-control form-control-sm">
+          <option><%=getUser.religion%></option>
+          <% listReligion.forEach(r => { %>
+          <option><%= r %> </option>
+          <% }) %>
+        </select>
+      </div>
+      <div class=" form-group col-md-6">
+        <label for="gender">Jenis Kelamin</label>
+        <select name="gender" class="form-control form-control-sm">
+          <option><%=getUser.gender%></option>
+          <% listGender.forEach(g => { %>
+          <option><%= g %> </option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="form-group col-md-12">
+        <label for="district">Kecamatan</label>
+        <select name="district" class="form-control form-control-sm">
+          <option><%=getUser.district%></option>
+          <% listDistrict.forEach(d => { %>
+          <option><%= d %> </option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="form-group col-md-12">
+        <label for="address">Alamat Rumah</label>
+        <textarea name="address" class="form-control" rows="3" cols="70" minlength="30"
+          placeholder="Alamat Rumah Lengkap" required><%=getUser.address%></textarea>
+      </div>
+      <div class="form-group col-md-12">
+        <label for="isActive">Ubah Status Akun</label>
+        <select name="isActive" class="form-control form-control-sm">
+          <% if (getUser.isActive ===true) { %>
+          <option value="<%=getUser.isActive%>">Aktif</option>
+          <option value="<%=!getUser.isActive%>">Tidak Aktif</option>
+          <% }else{ %>
+          <option value="<%=getUser.isActive%>">Tidak Aktif</option>
+          <option value="<%=!getUser.isActive%>">Aktif</option>
+          <% } %>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-warning" id="btnUpdUsrSubmit">Perbaharui</button>
+    <button type="button" class="btn btn-secondary"><a href="/admin/manage/users">Kembali</a></button>
+  </form>
+
+</div>
+
+<%- include("../../partials/footManageUserPage") %>
