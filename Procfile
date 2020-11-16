@@ -1,0 +1,1 @@
+web: export NODE_ENV=production && heroku buildpack  && cd ./app && npx sequelize-cli db:migrate all && npx sequelize-cli db:seed:all && cd .. && node app/server.js
