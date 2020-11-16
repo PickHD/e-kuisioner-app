@@ -1,0 +1,221 @@
+#user-dashboard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #e5e5e5;
+  color: #66AAFC;
+  box-sizing: border-box;
+}
+/* LEFT SIDE */
+#user-dashboard .user-left .user-info{
+  flex: 1;
+  background-color: #66AAFC;
+  padding: 10px;
+}
+#user-dashboard .user-left .user-info img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  color: white;
+  margin: 0 auto;
+}
+#user-dashboard .user-left .user-info h1{
+  display: flex;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+#user-dashboard .user-left .user-info h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 14px;
+}
+#user-dashboard .user-left .user-menu{
+  flex: 1;
+  background-color: #0F68BA;
+  padding: 10px;
+  height: 645px;
+}
+#user-dashboard .user-left .user-menu ul li{
+  display: block;
+  text-decoration: none;
+}
+#user-dashboard .user-left .user-menu ul li a{
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin-right: 20px;
+}
+/* END LEFT SIDE */
+
+/* RIGHT SIDE */
+#user-dashboard .user-right{
+  flex: 1;
+  flex-basis: 80%;
+  margin-left: 30px;
+  justify-content: space-between;
+}
+#user-dashboard .user-right .user-options{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: whitesmoke;
+  padding: 5px;
+}
+#user-dashboard .user-right .user-options .btn-group .dropdown-menu a{
+  color: #66AAFC;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+#user-dashboard .user-right .right-content{
+  flex:1;
+  flex-direction: column;
+  background-color: whitesmoke;
+}
+#user-dashboard .user-right .right-content h1{
+  flex: 1;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  margin: 30px;
+  padding: 10px;
+}
+#user-dashboard .user-right .right-content h2{
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 40px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #0F68BA;
+}
+#user-dashboard .user-right .right-content .status{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin: 0 auto;
+  width: 400px;
+  background-color: #66AAFC;
+  border-radius: 15px;
+  transition: 800ms ease;
+}
+#user-dashboard .user-right .right-content .status:hover{
+ transform: scale(1.1);
+}
+#user-dashboard .user-right .right-content .status .card-body{
+  display: flex;
+  flex-direction: row;
+  color: white;
+  margin: 0 auto;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+#user-dashboard .user-right .right-content .status .card-body .card-title{
+  width: 25%;
+}
+#user-dashboard .user-right .right-content .status .card-body .img-pencil{
+ width: 100px;
+}
+#user-dashboard .user-right .right-content .quisioner-card{
+ margin: 20px;
+}
+#user-dashboard .user-right .right-content .quisioner-card .card{
+ margin: 20px;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
+ box-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
+ transition: 800ms ease;
+}
+#user-dashboard .user-right .right-content .quisioner-card .card:hover{
+  transform: scale(1.1);
+}
+#user-dashboard .user-right .right-content .quisioner-card .card .card-header{
+ font-family: 'Quicksand', sans-serif;
+ font-weight: 600;
+ font-size: 20px;
+ color: black;
+}
+#user-dashboard .user-right .right-content .quisioner-card .card .card-body{
+ font-family: 'Quicksand', sans-serif;
+ font-weight: 400;
+ font-size: 16px;
+ color: black;
+ background-color: #C4C4C4;
+}
+#user-dashboard .user-right .right-content .quisioner-card .card .card-body a{
+  background-color: #0F68BA;
+  transition: 800ms ease;
+}
+#user-dashboard .user-right .right-content .quisioner-card .card .card-body a:hover{
+ transform: scale(1.1);
+}
+
+
+#user-dashboard .user-right .right-content .profile-form-edit form input,#user-dashboard .user-right .right-content .profile-form-edit form textarea,#user-dashboard .user-right .right-content .profile-form-edit form select{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #0F68BA;
+}
+#user-dashboard .user-right .right-content .profile-form-edit form button{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+}
+#user-dashboard .user-right .right-content .profile-form-edit form button a{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+}
+#user-dashboard .user-right .right-content .profile-form-edit form button a:hover{
+  text-decoration: none;
+}
+
+
+#user-dashboard .user-right .right-content .suspend-form form label{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #66AAFC;
+}
+#user-dashboard .user-right .right-content .suspend-form form img{
+  margin: 0 auto;
+  width: 300px;
+  background-repeat: no-repeat;
+}
+#user-dashboard .user-right .right-content .suspend-form form button{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 20px;
+}
+#user-dashboard .user-right .right-content .suspend-form form button a{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+}
+#user-dashboard .user-right .right-content .suspend-form form button a:hover{
+  text-decoration: none;
+}

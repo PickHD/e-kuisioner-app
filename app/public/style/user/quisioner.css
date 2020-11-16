@@ -1,0 +1,117 @@
+#user-quisioner{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #e5e5e5;
+  color: #66AAFC;
+  box-sizing: border-box;
+}
+/* LEFT SIDE */
+#user-quisioner .user-left .user-info{
+  flex: 1;
+  background-color: #66AAFC;
+  padding: 10px;
+}
+#user-quisioner .user-left .user-info img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  color: white;
+  margin: 0 auto;
+}
+#user-quisioner .user-left .user-info h1{
+  display: flex;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+#user-quisioner .user-left .user-info h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 14px;
+}
+#user-quisioner .user-left .user-menu{
+  flex: 1;
+  background-color: #0F68BA;
+  padding: 10px;
+  height: 520px;
+}
+#user-quisioner .user-left .user-menu ul li{
+  display: block;
+  text-decoration: none;
+}
+#user-quisioner .user-left .user-menu ul li a{
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin-right: 20px;
+}
+/* END LEFT SIDE */
+
+/* RIGHT SIDE */
+#user-quisioner .user-right{
+  flex: 1;
+  flex-basis: 80%;
+  margin-left: 30px;
+  justify-content: space-between;
+  overflow: scroll;
+  height: 700px;
+}
+#user-quisioner .user-right .user-options{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: whitesmoke;
+  padding: 5px;
+}
+#user-quisioner .user-right .user-options .btn-group .dropdown-menu a{
+  color: #66AAFC;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+#user-quisioner .user-right .right-content{
+  flex:1;
+  flex-direction: column;
+  background-color: whitesmoke;
+}
+#user-quisioner .user-right .right-content h1{
+  flex: 1;
+  margin: 30px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: #0F68BA;
+  text-align: center;
+}
+#user-quisioner .user-right .right-content form{
+ padding: 20px;
+}
+#user-quisioner .user-right .right-content form label{
+ font-family: 'Quicksand', sans-serif;
+ font-weight: 700;
+ font-size: 20px;
+}
+#user-quisioner .user-right .right-content form .form-check {
+ font-family: 'Quicksand', sans-serif;
+ font-weight: 600;
+ font-weight: lighter;
+ font-size: 16px;
+ color: #0F68BA;
+}
