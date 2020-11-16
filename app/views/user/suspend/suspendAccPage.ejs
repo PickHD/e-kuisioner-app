@@ -1,0 +1,19 @@
+<%- include("../../partials/headDashboardUser") %>
+<div class="container suspend-form">
+  <h1>Menonaktifkan Akun Peserta</h1>
+  <form action="/users/<%=getUser.first_name.trim()%>/<%=getUser.id%>/suspend-account" method="POST">
+    <img src="/static/img/wishes_concept.svg" alt="wishes_concept">
+    <div class="form-group form-check">
+      <label for="form-check">Dengan Menonaktifkan Akun Ini, Untuk Sementara Anda Tidak Bisa Masuk Dan Mengerjakan
+        Kuisioner Yang Tersedia. Setelah 7 Hari Dinonaktifkan, Akun Anda Akan Terhapus Permanen.</label> <br> <br>
+      <input type="checkbox" class="form-check-input" id="getChecked" required>
+      <label class="form-check-label" for="check">Saya Sudah Mengerti Dan Mengetahui Konsekuensi Dari Nonaktifkan
+        Akun</label>
+    </div>
+    <button type="submit" class="btn btn-danger" id="btnSusSubmit">NONAKTIFKAN AKUN</button>
+    <button type="button" class="btn btn-secondary"><a href="/users/dashboard">Kembali</a></button>
+  </form>
+
+</div>
+
+<%- include("../../partials/footDashboardUser") %>
