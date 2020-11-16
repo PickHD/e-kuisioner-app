@@ -1,0 +1,74 @@
+<%- include("../../partials/headManageQuisionerPage") %>
+<h1>Detail Kuisioner</h1>
+<div class="container edit-form">
+  <form action="/admin/manage/quisioner/<%=getQuisioner.id%>" method="POST">
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="QuisionerHeaderId">Judul Kuisioner</label>
+        <select name="QuisionerHeaderId" class="form-control">
+          <% for( let j = 0; j < getHeader.length; j++ ) { %>
+          <% if (j === getQuisioner.QuisionerHeaderId) { %>
+          <option value="<%=getQuisioner.QuisionerHeaderId%>">
+            <%=getHeader[getQuisioner.QuisionerHeaderId].getDataValue("quisioner_title")%>
+          </option>
+          <%break;%>
+          <% } %>
+          <option value="<%=getHeader[j].getDataValue("id")%>">
+            <%=getHeader[j].getDataValue("quisioner_title")%></option>
+          <% } %>
+        </select>
+      </div>
+      <div class="form-group col-md-12">
+        <label for="InputTypeId">Tipe Input</label>
+        <select name="InputTypeId" class="form-control" required>
+          <% for( let k = 0; k < getInputType.length; k++ ) { %>
+          <% if (k === getQuisioner.InputTypeId) { %>
+          <option value="<%=getQuisioner.InputTypeId%>">
+            <%=getInputType[getQuisioner.InputTypeId].getDataValue("input_type_name")%>
+          </option>
+          <%break;%>
+          <% } %>
+          <option value="<%=getInputType[k].getDataValue("id")%>">
+            <%=getInputType[k].getDataValue("input_type_name")%></option>
+          <% } %>
+        </select>
+      </div>
+      <div class="form-group col-md-12">
+        <label for="question_name">Pertanyaan</label>
+        <textarea class="form-control form-control-sm" name="question_name" cols="30" rows="8"
+          required><%=getQuisioner.question_name%></textarea>
+      </div>
+      <div class="form-group col-md-12">
+        <label for="OptionGroupId">Tipe Opsi Grup</label>
+        <select name="OptionGroupId" class="form-control" required>
+          <% for( let l = 0; l < getOptionGroup.length; l++ ) { %>
+          <% if (l === getQuisioner.OptionGroupId) { %>
+          <option value="<%=getQuisioner.OptionGroupId%>">
+            <%=getOptionGroup[getQuisioner.OptionGroupId].getDataValue("option_group_name")%>
+          </option>
+          <%break;%>
+          <% } %>
+          <option value="<%=getOptionGroup[l].getDataValue("id")%>">
+            <%=getOptionGroup[l].getDataValue("option_group_name")%></option>
+          <% } %>
+        </select>
+      </div>
+      <div class="form-group col-md-12">
+        <label for="isAvailable">Ketersediaan Pertanyaan</label>
+        <select name="isAvailable" class="form-control" required>
+          <% if (getQuisioner.isAvailable=== true) { %>
+          <option class="opt_selected" value="true">Ya</option>
+          <% }else{ %>
+          <option value="false">Tidak</option>
+          <%}%>
+          <option value="true">Ya</option>
+          <option value="false">Tidak</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-warning" id="btnUpdQSubmit">Perbaharui</button>
+    <button type="button" class="btn btn-secondary"><a href="/admin/manage/quisioners">Kembali</a></button>
+  </form>
+</div>
+
+<%- include("../../partials/footManageQuisionerPage") %>

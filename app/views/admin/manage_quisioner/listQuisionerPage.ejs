@@ -1,0 +1,173 @@
+<div class="row" id="manage-quisioner">
+  <div class="user-left">
+    <div class="user-info">
+      <img src="/static/img/user_circle.svg" alt="user-circle">
+      <h1><%=firstName%> <%=lastName%></h1>
+      <h3><%=role%></h3>
+    </div>
+    <div class="user-menu">
+      <ul>
+        <li><a href="/admin/dashboard" class="dashboard-link">Menu Utama</a><i class="fas fa-arrow-left"></i></li>
+        <li>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Kelola
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/admin/manage/users">User</a>
+              <a class="dropdown-item" href="/admin/manage/quisioners">Kuisioner</a>
+            </div>
+          </div><i class="fas fa-arrow-down"></i>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+  <div class="user-right">
+    <div class="user-options">
+      <div class="btn-group dropleft">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <span><i class="fas fa-users-cog"></i></span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/auth/logout">Keluar</a>
+        </div>
+      </div>
+    </div>
+    <div class="right-content">
+      <h1>Kelola Kuisioner</h1>
+      <div class="container">
+        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#createHeaderQuisioner">
+          <i class="fas fa-pencil-alt"></i> Tambah Kuisioner
+        </button>
+        <!-- START MODAL -->
+        <div class="modal fade" id="createHeaderQuisioner" data-backdrop="static" data-keyboard="false" tabindex="-1"
+          aria-labelledby="titleLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="titleLabel">Tambah Header Kuisioner</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="/admin/manage/quisioner/create-header" method="POST" autocomplete="on">
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <label for="quisioner_title">Judul Kuisioner </label>
+                      <select name="getTitle" class="form-control" id="selectTitle">
+                        <option>--Pilih Kuisioner--</option>
+                        <% for( let k = 0; k < getListHeader.length; k++ ) { %>
+                        <option value="<%=getListHeader[k].getDataValue("quisioner_title")%>">
+                          <%=getListHeader[k].getDataValue("quisioner_title")%></option>
+                        <% } %>
+                      </select>
+                    </div>
+                    <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="getCheck" onclick="checkClick()">
+                      <label class="form-check-label" for="getCheck">Buat Judul Baru?</label>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="title">Judul Kuisioner</label>
+                      <input type="text" class="form-control form-control-sm" name="setTitle">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="info">Info Kuisioner</label>
+                      <textarea class="form-control form-control-sm" name="info" cols="30" rows="3"></textarea>
+                    </div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <button type="submit" class="btn btn-success">Lanjutkan</button>
+              </div>
+            </div>
+            <!-- END MODAL -->
+            </form>
+          </div>
+        </div>
+        <table class="table table-hover " id="datatables">
+          <thead class="thead-blue">
+            <tr>
+              <th>#</th>
+              <th>Judul Kuisioner</th>
+              <th class="shrink">Pertanyaan</th>
+              <th colspan="2">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for( let j = 0; j < getList.length; j++ ) { %>
+            <tr>
+              <td><%=noInc++%></td>
+              <td><%=getList[j].getDataValue("Quisioner_header").getDataValue("quisioner_title")%></td>
+              <td><%=getList[j].getDataValue("question_name")%></td>
+              <td><a href="/admin/manage/quisioner/<%=getList[j].getDataValue("id")%>"><img src="/static/img/edit.svg"
+                    alt="view icon"></a></td>
+              <td><a href="/admin/manage/quisioner/delete/<%=getList[j].getDataValue("id")%>" id="btnDelQui"><img
+                    src="/static/img/trash.svg" alt="delete icon"></a></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+        <% if (pages > 0) { %>
+        <nav aria-label="...">
+          <ul class="pagination">
+            <% if (current == 1) { %>
+            <li class="page-item disabled">
+              <a class="page-link"><span aria-hidden="true">&laquo;</span></a>
+            </li>
+            <% } else { %>
+            <li class="page-item">
+              <a href="/admin/manage/quisioners/page-1" class="page-link"> <span aria-hidden="true">&laquo;</span></a>
+            </li>
+            <% } %> <% let i = (Number(current) > 20 ? Number(current) - 19 : 1) %>
+            <% if (i !== 1) { %>
+            <li class="page-item disabled"><a>...</a></li>
+            <% } %> <% for (i; i <= (Number(current) + 19) && i <= pages; i++){ %>
+            <% if (i == current) { %>
+            <li class="page-item active">
+              <a class="page-link"><span><%= i %></span></a>
+            </li>
+            <% } else { %>
+            <li class="page-item">
+              <a class="page-link" href="/admin/manage/quisioners/page-<%=i%>"><%= i %></a>
+            </li>
+            <% } %>
+            <% if (i == Number(current) + 19 && i < pages) { %>
+            <li class="page-item disabled"><a>...</a></li>
+            <% } %> <% } %>
+            <% if (current == pages) { %>
+            <li class="page-item disabled">
+              <a class="page-link"> <span aria-hidden="true">&raquo;</span></a>
+            </li>
+            <% } else { %>
+            <li class="page-item">
+              <a class="page-link" href="/admin/manage/quisioners/page-<%=pages%>"><span
+                  aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+            <% } %>
+          </ul>
+        </nav>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function checkClick() {
+    const getCheckBtn = document.getElementById("getCheck");
+    const getSelect = document.getElementById("selectTitle");
+    if (!getCheckBtn || !getSelect) {
+      return
+    }
+    if (getCheckBtn.checked == true) {
+      getSelect.disabled = true;
+    } else if (getCheckBtn.checked == false) {
+      getSelect.disabled = false;
+    }
+  }
+</script>

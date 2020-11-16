@@ -1,0 +1,44 @@
+<%- include("../../partials/headManageQuisionerPage") %>
+<h1>Lanjutan Membuat Kuisioner</h1>
+<div class="container next-form">
+  <form action="/admin/manage/quisioner/create-question/<%=getHeader.id%>" method="POST">
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="input_type">Tipe Input</label>
+        <select name="input_type" class="form-control" required>
+          <option>--Pilih Tipe Input--</option>
+          <% for( let j = 0; j < listInput.length; j++ ) { %>
+          <option value="<%=listInput[j].getDataValue("id")%>">
+            <%=listInput[j].getDataValue("input_type_name")%></option>
+          <% } %>
+        </select>
+      </div>
+      <div class="form-group col-md-12">
+        <label for="question">Pertanyaan</label>
+        <textarea class="form-control form-control-sm" name="question" cols="30" rows="8" required></textarea>
+      </div>
+      <div class="form-group col-md-12">
+        <label for="option_group">Tipe Opsi Grup</label>
+        <select name="option_group" class="form-control" required>
+          <option>--Pilih Tipe Opsi Grup--</option>
+          <% for( let k = 0; k < listOption.length; k++ ) { %>
+          <option value="<%=listOption[k].getDataValue("id")%>">
+            <%=listOption[k].getDataValue("option_group_name")%></option>
+          <% } %>
+        </select>
+      </div>
+      <div class="form-group col-md-12">
+        <label for="isAvailable">Ketersediaan Pertanyaan</label>
+        <select name="isAvailable" class="form-control" required>
+          <option>--Pilih Salah Satu--</option>
+          <option value="true">Ya</option>
+          <option value="false">Tidak</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success" id="btnAddQSubmit">Tambah</button>
+    <button type="button" class="btn btn-secondary"><a href="/admin/manage/quisioners">Kembali</a></button>
+  </form>
+</div>
+
+<%- include("../../partials/footManageQuisionerPage") %>
