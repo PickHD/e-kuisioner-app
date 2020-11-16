@@ -1,0 +1,43 @@
+{
+  "development": {
+    "username": "pickez",
+    "password": "reverseit40252",
+    "database": "e_kuisioner_dev",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
+  },
+  "test": {
+    "username": "pickez",
+    "password": "reverseit40252",
+    "database": "e_kuisioner_test",
+    "host": "localhost",
+    "dialect": "postgres",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
+  },
+  "production": {
+    "username": "pickez",
+    "password": "reverseit40252",
+    "database": "e_kuisioner_prod",
+    "host": "localhost",
+    "dialect": "postgres",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    },
+    "logging": false,
+    "use_env_variable": "DATABASE_URL"
+  }
+}
