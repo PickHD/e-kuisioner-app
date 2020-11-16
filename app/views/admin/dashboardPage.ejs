@@ -1,0 +1,235 @@
+<div class="row" id="admin-dashboard">
+
+  <div class="user-left">
+    <div class="user-info">
+      <img src="/static/img/user_circle.svg" alt="user-circle">
+      <h1><%=firstName%> <%=lastName%></h1>
+      <h3><%=role%></h3>
+    </div>
+    <div class="user-menu">
+      <ul>
+        <li><a href="#" class="dashboard-link">Menu Utama</a><i class="fas fa-arrow-right"></i></li>
+        <li>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Kelola
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/admin/manage/users">User</a>
+              <a class="dropdown-item" href="/admin/manage/quisioners">Kuisioner</a>
+            </div>
+          </div><i class="fas fa-arrow-down"></i>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+  <div class="user-right">
+    <div class="user-options">
+      <div class="btn-group dropleft">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <span><i class="fas fa-users-cog"></i></span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/auth/logout">Keluar</a>
+        </div>
+      </div>
+    </div>
+    <div class="right-content">
+      <h1>Menu Utama</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="card mb-3" style="width: 90%; border-radius:15px;">
+              <div class="row no-gutters" style="background-color: #66AAFC; color: white; border-radius:15px;">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title"><%=countQuisioner%></h5>
+                    <p class="card-text">Total Kuisioner</p>
+                  </div>
+                </div>
+                <div class="col-md-4" style="display: flex; justify-content: right; padding-right: 10px;">
+                  <img src="/static/img/pencil.svg" class="card-img" alt="...">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-3" style="width: 80%; border-radius:15px;">
+              <div class="row no-gutters" style="background-color: #66AAFC; color: white; border-radius:15px;">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title"><%=countUser%></h5>
+                    <p class="card-text">Total Peserta </p>
+                  </div>
+                </div>
+                <div class="col-md-4" style="display: flex; justify-content: right; padding-right: 10px;">
+                  <img src="/static/img/user.svg" class="card-img" alt="...">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-3" style="width: 80%; border-radius:15px;">
+              <div class="row no-gutters" style="background-color: #66AAFC; color: white; border-radius:15px;">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title"><%=countResponse%></h5>
+                    <p class="card-text">Total Respon</p>
+                  </div>
+                </div>
+                <div class="col-md-4" style="display: flex; justify-content: right; padding-right: 10px;">
+                  <img src="/static/img/vote.svg" class="card-img" alt="...">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card text-center">
+        <div class="card-header title-statistic">
+          Statistik Respon Dari Peserta
+        </div>
+        <div class="card-body">
+          <form action="/admin/dashboard" method="GET">
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="getQuestion">Silahkan Pilih Pertanyaan</label>
+                <select name="getQuestion" class="form-control form-control-sm" id="getData">
+                  <option><%=getQuestion%></option>
+                  <% listQuestion.forEach(lq => { %>
+                  <option value="<%=lq.id%>"><%=lq.question_name%></option>
+                  <% }) %>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <button type="submit" class="btn btn-outline-primary mb-2">Cari</button>
+              </div>
+            </div>
+          </form>
+          <canvas id="myChart"></canvas>
+          <div class="get-pdf">
+            <img src="/static/img/file_pdf.svg" alt="">
+            <button type="button" class="btn btn-outline-danger btn-sm"
+              style="display: flex; justify-content: flex-start; margin-top: 10px;" id="downloadPDF">Download
+              PDF</button>
+          </div>
+          <div style="height:0; width:0; overflow:hidden;">
+            <canvas id="canvasForDownload" width="1200" height="600"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.1.1/jspdf.umd.min.js"></script>
+<script>
+  const { jsPDF } = window.jspdf;
+
+  let ctx = document.querySelector('#admin-dashboard .user-right .right-content #myChart').getContext("2d");
+  let myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: [`<%=listResponse[0]%>`, `<%=listResponse[1]%>`, `<%=listResponse[2]%>`, `<%=listResponse[3]%>`, `<%=listResponse[4]%>`],
+        backgroundColor: [
+          "#71C837",
+          "#2AD4FF",
+          "#FFDD55",
+          "#4F7CAA",
+          "#F98989"
+        ]
+      }],
+      labels: [
+        'Sangat Setuju',
+        'Setuju',
+        'Netral',
+        'Tidak Setuju',
+        'Sangat Tidak Setuju'
+      ]
+    },
+    options: {
+      responsive: false,
+      hover: true,
+      legend: {
+        display: true,
+        position: "right"
+      },
+    }
+  });
+  let chartForDownload = {
+    type: "horizontalBar",
+    data: {
+      labels: [
+        'Sangat Setuju',
+        'Setuju',
+        'Netral',
+        'Tidak Setuju',
+        'Sangat Tidak Setuju'
+      ],
+      datasets: [{
+        data: [`<%=listResponse[0]%>`, `<%=listResponse[1]%>`, `<%=listResponse[2]%>`, `<%=listResponse[3]%>`, `<%=listResponse[4]%>`],
+        backgroundColor: [
+          "#71C837",
+          "#2AD4FF",
+          "#FFDD55",
+          "#4F7CAA",
+          "#F98989"
+        ]
+      }],
+
+    },
+    options: {
+      responsive: false,
+      scales: {
+        xAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      },
+      legend: {
+        display: false
+      },
+    }
+
+  };
+
+  let newCanvas = document.querySelector('#admin-dashboard .user-right .right-content #canvasForDownload');
+  let newCtx = newCanvas.getContext('2d');
+  let highQualCanvas = new Chart(newCtx, chartForDownload);
+
+  //add event listener to button
+  document.getElementById('downloadPDF').addEventListener("click", downloadPDF);
+
+  function downloadPDF() {
+    let getData = document.getElementById("getData");
+    let strData = getData.options[getData.selectedIndex].text;
+    let newDummyCanvas = document.querySelector('#admin-dashboard .user-right .right-content #canvasForDownload');
+    //create image from dummy canvas  
+    let newDummyCanvasImg = newDummyCanvas.toDataURL("image/png", 10);
+
+    //creates PDF from img
+    let doc = new jsPDF("l", "mm", "a4");
+    doc.setFontSize(20);
+    doc.setFont("times", "bold");
+    doc.setTextColor("#66AAFC")
+    doc.text(90, 10, "Laporan Responden Peserta E-kuisioner");
+    doc.setFont("times", "normal");
+    doc.setFontSize(14);
+    doc.setTextColor("#0F68BA");
+    doc.text(15, 30, `Pertanyaan:  ${strData} `)
+    doc.addImage(newDummyCanvasImg, 'PNG', 10, 50, 280, 150, "SLOW");
+    doc.save(`Laporan-Responden-Peserta-${new Date().toISOString().slice(0, 10).split('-').join('-')}.pdf`);
+    Swal.fire({
+      title: 'Sukses',
+      icon: 'success',
+      text: 'Unduh PDF Berhasil!',
+    })
+  }
+
+</script>
