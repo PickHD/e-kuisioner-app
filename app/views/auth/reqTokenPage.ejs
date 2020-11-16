@@ -1,0 +1,37 @@
+<div class="row" id="req-token-section">
+  <h1>Permintaan Ulang Token</h1>
+  <div class="wishes-concept">
+    <img src="/static/img/wishes_concept.svg" alt="wishes-concept">
+  </div>
+  <div class="req-form">
+    <form action="/auth/request-token" method="POST" autocomplete="on">
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="email">Alamat Email Anda</label>
+          <input type="email" class="form-control form-control-sm" name="email" placeholder="Masukan Email Anda"
+            inputmode="email" required>
+        </div>
+      </div>
+      <div class="form-groups col-md-12">
+        <label for="choose_template">Tujuan Pengiriman Email</label>
+        <select name="choose_template" class="form-control form-control-sm" required>
+          <option>-Pilih Salah Satu Tujuan-</option>
+          <% listTemplate.forEach(l => { %>
+          <option><%=l%> </option>
+          <% }) %>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Cari</button>
+    </form>
+  </div>
+</div>
+
+<% if (warningAlert) { %>
+<script>
+  Swal.fire({
+    icon: 'warning',
+    title: 'Pemberitahuan',
+    text: '<%=msg%>',
+  })
+</script>
+<%};%>
